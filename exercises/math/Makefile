@@ -11,6 +11,6 @@ math.exe : math.cs sfuns.dll
 #link library to  math.cs
 
 clean:
-	rm -f Out.txt math.exe 
+	rm -f Out.txt sfuns.dll math.exe 
 
 
