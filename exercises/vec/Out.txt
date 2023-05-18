@@ -1,0 +1,15 @@
+u  = 2 3 4
+v  = 1 2 3
+u+v= 3 5 7
+2*u= 4 6 8
+u*2= 4 6 8
+w2 = u+6*v = 4 9 14
+-u = -2 -3 -4
+u%v = 20
+u.dot(v) = 20
+cross product = 1 -2 1
+cross product = -1 2 -1
+norm(v) = 3.74165738677394
+norm(u) = 5.3851648071345
+approx(u,v) = False
+approx(u,u) = True
