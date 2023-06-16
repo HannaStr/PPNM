@@ -42,7 +42,35 @@ class main{
 		QR.print();
 	}
 
-	//public static void check_solve(){
+	public static void check_solve(){
+		WriteLine("Solve equation QRx=b for given b.")
+		//generate random square matrix A and random vector b (same size)
+		int n = 4;
 
-	//}
+		matrix A = new matrix(n,n);
+		vector b = new vector(n);
+		Random rndm = new Random();
+		for(int i=0;i<n;i++){
+			b[i] = rndm.Next(20)
+			for(int j=0;j<n;j++){
+				A[i,j]=rndm.Next(20);
+			}
+		}
+		WriteLine("Random matrix A is:");
+		A.print();
+		WriteLine("and random vector b is:");
+		b.print();
+
+		//factorize A into QR
+		QRGS lin_system = new decomp(A);
+		vector x = lin_system.solve(b)
+		WriteLine("Factorize matrix A into QR and solve QRX=b. x is:")
+		x.print();
+
+		//check that Ax=b
+		var Ax = A*x;
+		WriteLine("A*x should be equal to vector b. It is:")
+		Ax.print();
+
+	}
 }
