@@ -5,8 +5,8 @@ using static System.Random;
 
 class main{
 	public static void Main(){
-		decomp_test();
-		//solve_test();
+		check_decomp();
+		//check_solve();
 	}
 	
 	public static void check_decomp(){
