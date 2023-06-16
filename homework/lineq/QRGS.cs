@@ -3,11 +3,12 @@ using static System.Console;
 using static System.Math;
 
 public class QRGS{
-    
+    public matrix Q,R;
+
     //Gram-Schmidt orthogonalization of matrix A, calculate R
     //code from notes page 3
     public decomp(matrix A){
-        matrix Q = A.copy();
+        Q = A.copy();
         int m = A.size2;
         R = new matrix (m,m);
         for (int i=0; i<m; i++){
