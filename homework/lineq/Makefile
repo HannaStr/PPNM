@@ -8,7 +8,7 @@ QRGS.dll: QRGS.cs matrix.dll
 	mcs -target:library -reference:matrix.dll $<
 
 matrix.dll: vector.cs matrix.cs
-	mcs -target:library -out: $@ $^
+	mcs -target:library -out:$@ $^
 
 clean: 
 	rm -f *.exe *.dll *.txt
