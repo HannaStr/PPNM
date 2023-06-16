@@ -7,9 +7,9 @@ public class QRGS{
 
     //Gram-Schmidt orthogonalization of matrix A, calculate R
     //code from notes page 3
-    public decomp(matrix A){
-        Q = A.copy();
-        int m = A.size2;
+    public decomp(matrix a){
+        Q = a.copy();
+        int m = a.size2;
         R = new matrix (m,m);
         for (int i=0; i<m; i++){
             R[i,i] = Q[i].norm();
