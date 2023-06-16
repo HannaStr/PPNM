@@ -6,7 +6,7 @@ using static System.Random;
 class main{
 	public static void Main(){
 		check_decomp();
-		//check_solve();
+		check_solve();
 	}
 	
 	public static void check_decomp(){
