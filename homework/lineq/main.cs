@@ -18,8 +18,8 @@ class main{
 	
 		matrix A = new matrix(n,m);
 		Random rndm = new Random();
-		for(int i=0;i<n;i++){
-			for(int j=0;j<m;j++){
+		for(int i=0; i<n; i++){
+			for(int j=0; j<m; j++){
 				A[i,j]=rndm.Next(20);
 			}
 		}

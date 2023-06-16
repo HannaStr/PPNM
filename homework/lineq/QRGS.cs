@@ -8,6 +8,7 @@ public class QRGS{
     //code from notes page 3
     public decomp(matrix A){
         matrix Q = A.copy();
+        int m = A.size2;
         R = new matrix (m,m);
         for (int i=0; i<m; i++){
             R[i,i] = Q[i].norm();
