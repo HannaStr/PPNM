@@ -63,7 +63,7 @@ class main{
 
 		//factorize A into QR
 		QRGS lin_system = new QRGS(A);
-		vector x = lin_system.solve(b)
+		vector x = lin_system.solve(b);
 		WriteLine("Factorize matrix A into QR and solve QRX=b. x is:");
 		x.print();
 
