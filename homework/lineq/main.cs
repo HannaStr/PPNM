@@ -33,19 +33,19 @@ class main{
 		QRGS lin_system = new QRGS(A);
 		WriteLine("\nb) Factorize matrix A into QR. Matrix R is:");
 		lin_system.R.print();
-		WriteLine("   Note: R should be an upper triangular matrix.");
+		WriteLine("\n   Note: R should be an upper triangular matrix.");
 
 		//check that (Q^T)Q=1
 		matrix QT_Q = lin_system.Q.transpose()*lin_system.Q;
 		WriteLine("\nc) Calculate (Q_transposed * Q). It gives:");
 		QT_Q.print();
-		WriteLine($"   Note: should be an identity matrix.\n   In this case this is: {QT_Q.approx(matrix.id(m))}");
+		WriteLine($"\n   Note: should be an identity matrix.\n   In this case this is: {QT_Q.approx(matrix.id(m))}");
 
 		//check that QR=A
 		matrix QR = lin_system.Q*lin_system.R;
 		WriteLine("\nd) Calculate (Q*R):");
 		QR.print();
-		WriteLine($"   Note: Should be equal to the original matrix A.\n   In this case this is: {QR.approx(A)}");
+		WriteLine($"\n   Note: Should be equal to the original matrix A.\n   In this case this is: {QR.approx(A)}");
 	}
 
 	public static void check_solve(){
@@ -53,6 +53,7 @@ class main{
 		WriteLine(".........................................");
 		WriteLine("TASK 2: Solve equation QRx=b for given b.");
 		WriteLine("`````````````````````````````````````````");
+		
 		//generate random square matrix A and random vector b (same size)
 		int n = 4;
 
@@ -80,7 +81,7 @@ class main{
 		var Ax = A*x;
 		WriteLine("\nc) Calculate (A*x) which gives:");
 		Ax.print();
-		WriteLine($"   Note: It should be equal to our vector b.\n   In this case this is: {Ax.approx(b)}");
+		WriteLine($"\n   Note: It should be equal to our vector b.\n   In this case this is: {Ax.approx(b)}");
 
 	}
 }
