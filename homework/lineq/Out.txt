@@ -4,34 +4,37 @@ TASK 1: Gram-Schmidt orthogonalization
 
 a) Take a random tall matrix A:
 
-         3         13          8 
-        18          5          6 
-        12         12          9 
-        14         19         15 
-        14          3         11 
+        14         13         16 
+         2         14          0 
+        18          8         13 
+         0          2         13 
+        12          1         18 
 
 b) Factorize matrix A into QR. Matrix R is:
 
-      29.5       19.7       20.5 
-         0       17.9       8.74 
-         0          0       5.56 
+      25.8       14.2       26.1 
+         0       15.3      -0.87 
+         0          0       15.4 
+
    Note: R should be an upper triangular matrix.
 
 c) Calculate (Q_transposed * Q). It gives:
 
-         1   8.33e-17  -3.89e-16 
-  8.33e-17          1  -7.22e-16 
- -3.89e-16  -7.22e-16          1 
+         1   2.78e-17   4.16e-16 
+  2.78e-17          1  -2.78e-17 
+  4.16e-16  -2.78e-17          1 
+
    Note: should be an identity matrix.
    In this case this is: True
 
 d) Calculate (Q*R):
 
-         3         13          8 
-        18          5          6 
-        12         12          9 
-        14         19         15 
-        14          3         11 
+        14         13         16 
+         2         14          0 
+        18          8         13 
+         0          2         13 
+        12          1         18 
+
    Note: Should be equal to the original matrix A.
    In this case this is: True
 
@@ -41,19 +44,20 @@ TASK 2: Solve equation QRx=b for given b.
 
 a) Take a random square matrix A:
 
-        14         13          2         15 
-        14          2          7         10 
-        15         13          8          7 
-        15         17         10         14 
+         0         14         11         18 
+        12         17         14         17 
+        18         10         19         18 
+        12         12         17         10 
 
    and a random vector b (of the same size):
-         9          4          2          4 
+         9          4         19          9 
 
 b) Factorize matrix A into QR and solve QRx=b. 
    Therefore, x is:
-     0.249    -0.0239     -0.586      0.467 
+    -0.312       -1.4       1.25      0.821 
 
 c) Calculate (A*x) which gives:
-         9          4          2          4 
+         9          4         19          9 
+
    Note: It should be equal to our vector b.
    In this case this is: True
