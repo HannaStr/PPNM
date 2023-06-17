@@ -1,10 +1,15 @@
 using static System.Console;
 using static System.Math;
+
+//start with
 public class vec{
-	public double x,y,z;
+	public double x,y,z;    //three components of a vector
+    //implement constructors
 	public vec (double a,double b,double c){x=a;y=b;z=c;}
 	public vec (){ x=y=z=0;}
+    //print for debugging
 	public void print(string s){Write(s);WriteLine($"{x} {y} {z}");}
+    //overload mathematical operators
 	public static vec operator+(vec u, vec v){/* u+v */
 		return new vec(u.x+v.x, u.y+v.y, u.z+v.z);
 			}
@@ -24,7 +29,7 @@ public class vec{
 	public static vec operator*(double c, vec u){ /* c*c */
                 return u*c;
                         }
-
+//implement methods for dot-product, vector-product and norm
 	public static double operator% (vec u, vec v){ /*u%v = dotproduct */
 		return u.x*v.x + u.y*v.y + u.z*v.z;
 			}
@@ -39,6 +44,7 @@ public class vec{
 		return Sqrt( this.x*this.x + this.y*this.y + this.z*this.z );
 			}
 
+//make and 'approx' method to compare two vecs with absolute precision 'acc' and relate precision 'eps'
 
 	static bool approx(double a, double b, double acc=1e-9, double eps=1e-9){
                 if(Abs(a-b)<acc)return true;
