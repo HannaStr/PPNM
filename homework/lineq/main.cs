@@ -28,7 +28,7 @@ class main{
 
 		//factorize A into QR
 		QRGS lin_system = new QRGS(A);
-		WriteLine("Factorize matrix A into QR. R should be upper triangular. It is:")
+		WriteLine("Factorize matrix A into QR. R should be upper triangular. It is:");
 		lin_system.R.print();
 
 		//check that (Q^T)Q=1
@@ -38,12 +38,12 @@ class main{
 
 		//check that QR=A
 		matrix QR = lin_system.Q*lin_system.R;
-		WriteLine("Q*R should equal original matrix A. It is:")
+		WriteLine("Q*R should equal original matrix A. It is:");
 		QR.print();
 	}
 
 	public static void check_solve(){
-		WriteLine("Solve equation QRx=b for given b.")
+		WriteLine("Solve equation QRx=b for given b.");
 		//generate random square matrix A and random vector b (same size)
 		int n = 4;
 
@@ -51,7 +51,7 @@ class main{
 		vector b = new vector(n);
 		Random rndm = new Random();
 		for(int i=0;i<n;i++){
-			b[i] = rndm.Next(20)
+			b[i] = rndm.Next(20);
 			for(int j=0;j<n;j++){
 				A[i,j]=rndm.Next(20);
 			}
@@ -64,12 +64,12 @@ class main{
 		//factorize A into QR
 		QRGS lin_system = new QRGS(A);
 		vector x = lin_system.solve(b)
-		WriteLine("Factorize matrix A into QR and solve QRX=b. x is:")
+		WriteLine("Factorize matrix A into QR and solve QRX=b. x is:");
 		x.print();
 
 		//check that Ax=b
 		var Ax = A*x;
-		WriteLine("A*x should be equal to vector b. It is:")
+		WriteLine("A*x should be equal to vector b. It is:");
 		Ax.print();
 
 	}
