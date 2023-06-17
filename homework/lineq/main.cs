@@ -10,8 +10,10 @@ class main{
 	}
 	
 	public static void check_decomp(){
-		WriteLine("\nTASK 1: Gram-Schmidt orthogonalization\n");
-		
+		WriteLine("......................................");
+		WriteLine("TASK 1: Gram-Schmidt orthogonalization");
+		WriteLine("``````````````````````````````````````");
+
 		//generate random tall matrix A(n,m) for n>m
 		int n=5;
 		int m=3;
@@ -31,24 +33,26 @@ class main{
 		QRGS lin_system = new QRGS(A);
 		WriteLine("\nb) Factorize matrix A into QR. Matrix R is:");
 		lin_system.R.print();
-		WriteLine("Note: R should be an upper triangular matrix.");
+		WriteLine("   Note: R should be an upper triangular matrix.");
 
 		//check that (Q^T)Q=1
 		matrix QT_Q = lin_system.Q.transpose()*lin_system.Q;
 		WriteLine("\nc) Calculate (Q_transposed * Q). It gives:");
 		QT_Q.print();
-		WriteLine($"Note: should be an identity matrix. \nIn this case this is: {QT_Q.approx(matrix.id(m))}");
+		WriteLine($"   Note: should be an identity matrix.\n   In this case this is: {QT_Q.approx(matrix.id(m))}");
 
 		//check that QR=A
 		matrix QR = lin_system.Q*lin_system.R;
 		WriteLine("\nd) Calculate (Q*R):");
 		QR.print();
-		WriteLine($"Note: Should be equal to the original matrix A. In this case this is: {QR.approx(A)}");
+		WriteLine($"   Note: Should be equal to the original matrix A.\n   In this case this is: {QR.approx(A)}");
 	}
 
 	public static void check_solve(){
 		WriteLine();
-		WriteLine("\nTASK 2: Solve equation QRx=b for given b.\n");
+		WriteLine(".........................................");
+		WriteLine("TASK 2: Solve equation QRx=b for given b.");
+		WriteLine("`````````````````````````````````````````");
 		//generate random square matrix A and random vector b (same size)
 		int n = 4;
 
@@ -63,20 +67,20 @@ class main{
 		}
 		WriteLine("\na) Take a random square matrix A:");
 		A.print();
-		WriteLine("\nand a random vector b (of the same size):");
+		WriteLine("\n   and a random vector b (of the same size):");
 		b.print();
 
 		//factorize A into QR
 		QRGS lin_system = new QRGS(A);
 		vector x = lin_system.solve(b);
-		WriteLine("\nb) Factorize matrix A into QR and solve QRx=b. \nTherefore, x is:");
+		WriteLine("\nb) Factorize matrix A into QR and solve QRx=b. \n   Therefore, x is:");
 		x.print();
 
 		//check that Ax=b
 		var Ax = A*x;
 		WriteLine("\nc) Calculate (A*x) which gives:");
 		Ax.print();
-		WriteLine($"Note: It should be equal to our vector b. \nIn this case this is: {Ax.approx(b)}");
+		WriteLine($"   Note: It should be equal to our vector b.\n   In this case this is: {Ax.approx(b)}");
 
 	}
 }
