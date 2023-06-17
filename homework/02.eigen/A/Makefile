@@ -1,4 +1,4 @@
-Out.txt : main.exe
+Out.txt: main.exe
 	mono $< > $@
 
 main.exe: main.cs matrix.dll jacobi.dll
@@ -7,9 +7,9 @@ main.exe: main.cs matrix.dll jacobi.dll
 jacobi.dll: jacobi.cs matrix.dll
 	mcs -target:library -reference:matrix.dll $<
 
-LIBPATH = ../../../matlib
+MATLIB_PATH = ../../../matlib
 
-matrix.dll : $(LIBPATH)/vector.cs $(LIBPATH)/matrix.cs
+matrix.dll: $(MATLIB_PATH)/vector.cs $(MATLIB_PATH)/matrix.cs
 	mcs -target:library -out:$@ $^
 
 clean:
