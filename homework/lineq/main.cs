@@ -27,7 +27,7 @@ class main{
 		A.print();
 
 		//factorize A into QR
-		QRGS lin_system = new decomp(A);
+		QRGS lin_system = new QRGS(A);
 		WriteLine("Factorize matrix A into QR. R should be upper triangular. It is:")
 		lin_system.R.print();
 
@@ -62,7 +62,7 @@ class main{
 		b.print();
 
 		//factorize A into QR
-		QRGS lin_system = new decomp(A);
+		QRGS lin_system = new QRGS(A);
 		vector x = lin_system.solve(b)
 		WriteLine("Factorize matrix A into QR and solve QRX=b. x is:")
 		x.print();
