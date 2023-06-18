@@ -1,7 +1,7 @@
-all: Out.txt Fit.svg
+#all: Out.txt Fit.svg
 
-Fit.svg: fit.gpi Out.txt
-	gnuplot $<
+#Fit.svg: fit.gpi Out.txt
+#	gnuplot $<
 
 Out.txt: main.exe
 	mono $< > $@
@@ -9,9 +9,12 @@ Out.txt: main.exe
 main.exe: main.cs matrix.dll lsfit.dll
 	mcs -target:exe -reference:matrix.dll -reference:lsfit.dll $<
 
-QRGS_DIR: ../../../01.lineq
+#QRGS_DIR = ~/PPNM/homework/01.lineq
 
-QRGS.dll: $(QRGS_DIR)/QRGS.cs matrix.dll
+#QRGS.dll: $(QRGS_DIR)/QRGS.cs matrix.dll
+#	mcs -target:library -reference:matrix.dll $<
+
+QRGS.dll: QRGS.cs matrix.dll
 	mcs -target:library -reference:matrix.dll $<
 
 lsfit.dll: lsfit.cs matrix.dll
