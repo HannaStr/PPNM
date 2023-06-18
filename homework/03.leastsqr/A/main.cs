@@ -5,10 +5,7 @@ using static System.Random;
 
 class main{
     public static void Main(){
-        lstsqr();
-    }
-
-    public static void lstsqr(){
+        
         double [] t  = new double [] {1, 2, 3, 4, 6, 9, 10, 13, 15};
         double [] y  = new double [] {117, 100, 88, 72, 53, 29.5, 25.2, 15.2, 11.1};
         double [] dy = new double [] {5, 5, 5, 4, 4, 3, 3, 2, 2};
@@ -22,7 +19,7 @@ class main{
         double [] ln_y   = new double [n];
         double [] d_ln_y = new double [n];
 
-        for(i=0, i<n, i++){
+        for(int i=0; i<n; i++){
             ln_y[i] = Log(y[i]);
             d_ln_y[i] = dy[i]/y[i];
         }

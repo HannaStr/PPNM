@@ -9,16 +9,16 @@ Out.txt: main.exe
 main.exe: main.cs matrix.dll lsfit.dll
 	mcs -target:exe -reference:matrix.dll -reference:lsfit.dll $<
 
-#QRGS_DIR = ~/PPNM/homework/01.lineq
+lsfit.dll: lsfit.cs matrix.dll QRGS.dll
+	mcs -target:library -reference:matrix.dll -reference:QRGS.dll $<
 
-#QRGS.dll: $(QRGS_DIR)/QRGS.cs matrix.dll
+QRGS_DIR = ~/PPNM/homework/01.lineq
+
+QRGS.dll: $(QRGS_DIR)/QRGS.cs matrix.dll
+	mcs -target:library -reference:matrix.dll -out:./$@ $<
+
+#QRGS.dll: QRGS.cs matrix.dll
 #	mcs -target:library -reference:matrix.dll $<
-
-QRGS.dll: QRGS.cs matrix.dll
-	mcs -target:library -reference:matrix.dll $<
-
-lsfit.dll: lsfit.cs matrix.dll
-	mcs -target:library -reference:matrix.dll $<
 
 MATLIB_PATH = ../../../matlib
 
