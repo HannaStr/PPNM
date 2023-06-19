@@ -176,7 +176,19 @@
 	</g>
 	<g id="gnuplot_plot_2" ><title>Fit</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
+	<g transform="translate(498.09,93.91)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
+		<text><tspan font-family="Arial" >Fit</tspan></text>
+	</g>
 </g>
+<g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
+	<path stroke='rgb(230, 159,   0)'  d='M506.48,90.01 L549.04,90.01 M111.80,110.22 L119.37,121.97 L126.93,133.27 L134.50,144.13 L142.07,154.56 L149.63,164.59
+		L157.20,174.24 L164.77,183.51 L172.33,192.42 L179.90,200.98 L187.47,209.21 L195.04,217.13 L202.60,224.74 L210.17,232.05
+		L217.74,239.08 L225.30,245.83 L232.87,252.33 L240.44,258.57 L248.00,264.57 L255.57,270.34 L263.14,275.88 L270.71,281.21
+		L278.27,286.34 L285.84,291.26 L293.41,296.00 L300.97,300.55 L308.54,304.92 L316.11,309.12 L323.68,313.17 L331.24,317.05
+		L338.81,320.79 L346.38,324.37 L353.94,327.83 L361.51,331.14 L369.08,334.33 L376.64,337.39 L384.21,340.34 L391.78,343.17
+		L399.35,345.89 L406.91,348.51 L414.48,351.03 L422.05,353.44 L429.61,355.77 L437.18,358.00 L444.75,360.15 L452.31,362.21
+		L459.88,364.20 L467.45,366.10 L475.02,367.94 L482.58,369.70 L490.15,371.39 L497.72,373.02 L505.28,374.58 L512.85,376.09
+		L520.42,377.54 L527.98,378.93 L535.55,380.26 L543.12,381.55 L550.69,382.78 L558.25,383.97  '/></g>
 	</g>
 <g fill="none" color="white" stroke="rgb(230, 159,   0)" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
