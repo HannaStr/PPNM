@@ -36,7 +36,7 @@ class main{
 
         //to get the best fit for y we need coefficients a and lambda
         //c_k[0]=a, c_k[1]=lamda
-        for(double k=1.0; k<16; k+=1.0/4.0){
+        for(double k=1.0; k<16; k+=0.5){
             WriteLine($"{k} {Exp(c_k[0])*Exp(c_k[1]*k)}");
 
         }
