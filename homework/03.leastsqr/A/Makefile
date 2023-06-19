@@ -1,6 +1,6 @@
-all: Out.txt Fit.svg
+all: Out.txt Plot.svg
 
-Fit.svg: plot.gpi Out.txt
+Plot.svg: plot.gpi Out.txt
 	gnuplot $<
 
 Out.txt: main.exe
@@ -17,8 +17,6 @@ QRGS_DIR = ~/PPNM/homework/01.lineq
 QRGS.dll: $(QRGS_DIR)/QRGS.cs matrix.dll
 	mcs -target:library -reference:matrix.dll -out:./$@ $<
 
-#QRGS.dll: QRGS.cs matrix.dll
-#	mcs -target:library -reference:matrix.dll $<
 
 MATLIB_PATH = ../../../matlib
 
