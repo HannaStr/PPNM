@@ -1,11 +1,11 @@
- set terminal svg
+ set terminal svg background "white"
  set output "radioactive_decay.svg"
- set title "Ordinary Least-Squares Fit (by QR-decomposition) of Radioactive Decay";\
- set xlabel "Time [days]";\
- set ylabel "Per-cent Activity";\
- set tics out
+ set title "Ordinary Least-Squares Fit (by QR-decomposition) of Radioactive Decay"
  set key top right;
+ set xlabel "Time [days]"
+ set ylabel "Per-cent Activity"
  set xzeroaxis
  set yzeroaxis
- plot "Out.txt" index 0 using 1:2:3 pt 6 ps 1 with yerrorbars title "Data"\
-,"Out.txt" index 1 using 1:2 lt 4 with lines title "Fit"
+ set tics out
+ plot "Out.txt" index 0 using 1:2:3 pt 6 ps 1 with yerrorbars title "Experimental data"\
+,"Out.txt" index 1 using 1:2 lt 4 with lines title "Least-Square Fit"
