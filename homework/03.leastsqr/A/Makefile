@@ -1,7 +1,7 @@
-#all: Out.txt Fit.svg
+all: Out.txt Fit.svg
 
-#Fit.svg: fit.gpi Out.txt
-#	gnuplot $<
+Fit.svg: plot.gpi Out.txt
+	gnuplot $<
 
 Out.txt: main.exe
 	mono $< > $@

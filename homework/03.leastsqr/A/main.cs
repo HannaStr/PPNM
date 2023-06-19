@@ -24,9 +24,22 @@ class main{
             d_ln_y[i] = dy[i]/y[i];
         }
 
-        vector coeffs = ls_sqr_fit.lsfit(fs, t, ln_y, d_ln_y);
+        //Calculate the fitting parameters c_k
+        vector c_k = ls_sqr_fit.lsfit(fs, t, ln_y, d_ln_y);
 
-        coeffs.print();
+        for(int i=0; i<n; i++){
+            WriteLine($"{t[i]} {y[i]} {dy[i]}");
+        }
+
+        WriteLine();
+
+        //to get the best fit for y we need coefficients a and lambda
+        //c_k[0]=a, c_k[1]=lamda
+        for(int k=0; k<20; k++){
+            WriteLine($"{k} {Exp(c_k[0])*Exp(c_k[1]*k)}");
+
+        }
+        //c_k.print();
 
 
     }
