@@ -39,8 +39,11 @@ class main{
             WriteLine($"{k} {Exp(c_k[0])*Exp(c_k[1]*k)}");
 
         }
-        //c_k.print();
 
-
+        WriteLine("\nThX is today known as Ra_224. \nThe modern value of its half-life time is T_1/2 = 3.6313(14) days [1]");
+        //half-life time is T_1/2 = ln(2)/lambda
+        WriteLine($"\nT_half of ThX is: {Log(2)/Abs(c_k[1])}");
+        WriteLine($"\nTherefore, the result from the least square fit is {Round(((Log(2)/Abs(c_k[1])-3.63)/3.63)*100,2)}% larger than the modern value\n");
+        WriteLine("\n     [1] DOI: 10.1016/j.apradiso.2020.109572");        
     }
 }
