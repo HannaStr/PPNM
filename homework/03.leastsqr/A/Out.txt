@@ -42,11 +42,12 @@
 15.5 11.92781855725
 
 ThX is today known as Ra_224. 
-The modern value of its half-life time is T_1/2 = 3.6313(14) days [1]
+The modern value of its half-life time is T_1/2 = 3.6313(14) days. [1]
 
-T_half of ThX is: 4.38379963473882
+T_1/2 of ThX from the least-quare fit is: 4.38379963473882
 
-Therefore, the result from the least square fit is 20.77% larger than the modern value
+Therefore, the result from the fit is 20.77% larger than the true value.
 
 
-     [1] DOI: 10.1016/j.apradiso.2020.109572
+Sources:
+   [1] DOI: 10.1016/j.apradiso.2020.109572
