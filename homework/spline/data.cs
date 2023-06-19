@@ -4,10 +4,7 @@ using static System.Math;
 
 class main{
     public static void Main(){
-        test_lininterp();
-    }
 
-    public static void test_lininterp(){
         int n = 15;
         double[] x = new double[n];
         double[] y = new double[n];

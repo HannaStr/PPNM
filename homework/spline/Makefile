@@ -1,4 +1,4 @@
-all: Plot.svg Out.txt 
+all: Out.txt Plot.svg
 
 Out.txt : main.exe
 	mono $< > $@
