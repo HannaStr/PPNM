@@ -8,4 +8,4 @@
  set yzeroaxis
  set tics out
  plot "Out.txt" index 0 using 1:2:3 pt 6 ps 1 with yerrorbars title "Experimental data"\
-,"Out.txt" index 1 using 1:2 lt 4 with lines title "Least-Square Fit"
+,"Out.txt" index 1 using 1:2 pt 6 with lines title "Least-Square Fit"
