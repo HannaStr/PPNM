@@ -1,0 +1,13 @@
+set terminal svg background "white"
+set output "erf.svg"
+set title "Plot of the Error Function"
+set key bottom right
+set xlabel "x"
+set ylabel "erf (x)"
+set tics out
+set xzeroaxis
+set yzeroaxis
+set yrange [-1.1:1.1]
+plot 'Out.txt' using 1:2 with lines lw 3 lc rgb '#2e86ab' title "Erf from homework 'Quadratures'"\
+, '../../../exercises/plots/erf_data.data' using 1:2 with lines lt 0 lw 2 lc rgb '#f18f01' title "Erf from exercise 'Plots'"\
+, 'erf_wiki.data' using 1:2 with points pt 2 lc rgb '#a23b72' title "data from Wikipedia"

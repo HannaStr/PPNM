@@ -1,0 +1,78 @@
+using System;
+using static System.Console;
+using static System.Math;
+
+public class main{
+    public static void Main(){
+        WriteLine("\nTesting the implementation of the integration algorithm on some integrals.\nThe result is compared to the expected values with uncertainty 10e-4.");
+        WriteLine("..........................................................................\n");
+        int_1();
+        int_2();
+        int_3();
+        int_4();
+        erf_data();
+    }
+
+    public static void int_1(){
+        Func<double,double> f = x => Sqrt(x);
+        double a = 0.0;
+        double b = 1.0;
+        double integral = rai.integrate(f,a,b);
+        double expected = 2.0/3.0;
+        WriteLine($"1)\nIntegral of [Sqrt(x)] in respect of x with limit (0,1) is: {integral}.");
+        WriteLine($"\nIt should be 2/3.\nIn this case this is: ");
+        approx(expected, integral);
+    }
+
+    public static void int_2(){
+        Func<double,double> f = x => 1/Sqrt(x);
+        double a = 0.0;
+        double b = 1.0;
+        double integral = rai.integrate(f,a,b);
+        double expected = 2.0;
+        WriteLine($"2)\nIntegral of [1/Sqrt(x)] in respect of x with limit (0,1) is: {integral}.");
+        WriteLine($"\nIt should be 2.\nIn this case this is: ");
+        approx(expected, integral);
+    }
+
+    public static void int_3(){
+        Func<double,double> f = x => 4*Sqrt(1-Pow(x,2));
+        double a = 0.0;
+        double b = 1.0;
+        double integral = rai.integrate(f,a,b);
+        double expected = PI;
+        WriteLine($"3)\nIntegral of [4*sqrt(1-x^2)] in respect of x with limit (0,1) is: {integral}.");
+        WriteLine($"\nIt should be pi.\nIn this case this is: ");
+        approx(expected, integral);
+    }
+
+    public static void int_4(){
+        Func<double,double> f = x => Log(x)/Sqrt(x);
+        double a = 0.0;
+        double b = 1.0;
+        double integral = rai.integrate(f,a,b);
+        double expected = -4;
+        WriteLine($"4)\nIntegral of [ln(x)/sqrt(x)] in respect of x with limit (0,1) is: {integral}.");
+        WriteLine($"\nIt should be -4.\nIn this case this is: ");
+        approx(expected, integral);
+    }
+
+    public static void approx(double e, double i){
+        //double e = expected;
+        double t = Pow(10,-4);
+        //double i = integral;
+        double diff = Abs(e)-Abs(i);
+        if (diff < t){
+            WriteLine("True\n");
+        }
+        else WriteLine("False\n");
+    }
+
+    public static void erf_data(){
+        WriteLine("");
+        for(double i=-3.5; i<=3.5; i=i+1.0/32.0){
+            double erf_i = rai.erf(i);
+            WriteLine($"{i} {erf_i}");
+        }        
+    }     
+}
