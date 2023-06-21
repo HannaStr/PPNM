@@ -1,0 +1,13 @@
+set terminal svg background "white"
+set output "plot.svg"
+set title "Area of a unit circle - estimated error vs actual error"
+set xlabel "Number of sampling points"
+set ylabel "Area of the circle, A"
+set key top right
+set xzeroaxis
+set yzeroaxis
+set tics out
+set logscale x
+set xrange [5:1.5e8]
+plot 3.14159265358979 lw 2 title "A_{Real} = Pi"\
+, 'unit_circ.data' index 0 using 1:2:3 pt 7 lw 2 with yerrorbars title "A_{Monte Carlo}"\
