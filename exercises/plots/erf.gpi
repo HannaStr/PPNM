@@ -1,0 +1,12 @@
+set terminal svg
+set key bottom right
+set output "Erf.svg"
+set xlabel "x"
+set ylabel "y"
+set tics out
+set xzeroaxis
+set yzeroaxis
+set samples 800
+set title "Error function"
+plot [-5:5][-2:2] \
+ "erf_data.data" with lines linetype 1 title "theory" \
