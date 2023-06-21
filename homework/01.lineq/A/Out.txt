@@ -1,0 +1,63 @@
+......................................
+TASK 1: Gram-Schmidt orthogonalization
+``````````````````````````````````````
+
+a) Take a random tall matrix A:
+
+        12         12         14 
+        19         13          0 
+         6         12          2 
+        13          1          5 
+        14         19          4 
+
+b) Factorize matrix A into QR. Matrix R is:
+
+      30.1       24.7         10 
+         0       14.5       1.82 
+         0          0       11.7 
+
+   Note: R should be an upper triangular matrix.
+
+c) Calculate (Q_transposed * Q). It gives:
+
+         1          0   4.16e-17 
+         0          1  -5.55e-17 
+  4.16e-17  -5.55e-17          1 
+
+   Note: should be an identity matrix.
+   In this case this is: True
+
+d) Calculate (Q*R):
+
+        12         12         14 
+        19         13   8.88e-16 
+         6         12          2 
+        13          1          5 
+        14         19          4 
+
+   Note: Should be equal to the original matrix A.
+   In this case this is: True
+
+.........................................
+TASK 2: Solve equation QRx=b for given b.
+`````````````````````````````````````````
+
+a) Take a random square matrix A:
+
+         8          0         12         11 
+        12          0          4          0 
+        11         13         11         13 
+        14          2          0          8 
+
+   and a random vector b (of the same size):
+         8         18          7         18 
+
+b) Factorize matrix A into QR and solve QRx=b. 
+   Therefore, x is:
+      1.52     -0.384    -0.0591     -0.313 
+
+c) Calculate (A*x) which gives:
+         8         18          7         18 
+
+   Note: It should be equal to our vector b.
+   In this case this is: True
