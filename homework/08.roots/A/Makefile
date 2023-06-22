@@ -9,4 +9,14 @@ main.exe: main.cs roots.dll vector.dll
 roots.dll: roots.cs vector.dll QRGS.dll
 	mcs -target:library -reference:vector.dll -reference:QRGS.dll $<
 
-MATLIB_PATH = ../../lineq
+QRGS_PATH = ../../01.lineq/B
+
+QRGS.dll: $(QRGS_PATH)/QRGS.cs vector.dll
+
+MATLIB_PATH = ../../../matlib
+
+vector.dll: $(MATLIB_PATH)/vector.cs $(MATLIB_PATH)/matrix.cs
+	mcs -target:library -out:$@ $^
+
+clean:
+	rm -f *.exe *.dll *.txt
