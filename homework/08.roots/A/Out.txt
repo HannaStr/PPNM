@@ -1,0 +1,15 @@
+
+TASK 1: Test the root-finding routine using some simple equations.
+
+
+a) Test for a 1-dimentional function
+
+   Find the roots of f(x)=x^2-9:
+   The roots are at: 3.00001536013036  (should be at 3) and at -3.00025147368122  (should be at -3)
+
+
+b) Test for a 2-dimentional function
+
+   Find the roots of f(x)={(x^2-9), (x^2-4)}:
+   The roots are at: 3.0000000000394, -3.00000001888152  (should be at 3, -3) and at 2.00000518123589, -2.00010202587339  (should be at 2, -2)
+

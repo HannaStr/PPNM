@@ -12,6 +12,7 @@ roots.dll: roots.cs vector.dll QRGS.dll
 QRGS_PATH = ../../01.lineq/B
 
 QRGS.dll: $(QRGS_PATH)/QRGS.cs vector.dll
+	mcs -target:library -reference:vector.dll -out:./$@ $<
 
 MATLIB_PATH = ../../../matlib
 
