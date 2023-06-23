@@ -14,8 +14,11 @@ b) Test for a 2-dimentional function
    The roots are at: 3.0000000000394, -3.00000001888152  (should be at 3, -3) and at 2.00000518123589, -2.00010202587339  (should be at 2, -2)
 
 
-c) Find the extremum(s) of the Rosenbrock's valley functio. 
+TASK 2: Apply the root-finding routine to the Rosenbrock's valley function.
 
-   Find the roots of f(x)={}:
-   The roots are at: (0.483394760289921, 0.999997572119375) and (0.228807465505502, 0.999995088493574)  (should be at +/-1, 1)
+
+a) Find the extremum(s) of the Rosenbrock's valley function. 
+
+   Find the roots of f(x,y) = (1-x)^2 + 100(y-x^2)^2:
+   The roots are at: 0.999002398096692, 0.998948452152269  (should be x=1, y=1)  and 0.998005827775727, 0.997898006846103  (should be x^2=y)
 
