@@ -19,6 +19,6 @@ TASK 2: Apply the root-finding routine to the Rosenbrock's valley function.
 
 a) Find the extremum(s) of the Rosenbrock's valley function. 
 
-   Find the roots of f(x,y) = (1-x)^2 + 100(y-x^2)^2:
+   Find the roots of f(x,y) = (1-x)^2 + 100(y-x^2)^2 by finding the roots of it's gradient:
    The roots are at: 0.999002398096692, 0.998948452152269  (should be x=1, y=1)  and 0.998005827775727, 0.997898006846103  (should be x^2=y)
 

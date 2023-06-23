@@ -49,7 +49,7 @@ public class main{
         var res_21 = roots.newton(f, a_21);
         var res_22 = roots.newton(f, a_22);
         WriteLine("\na) Find the extremum(s) of the Rosenbrock's valley function. \n");
-        WriteLine("   Find the roots of f(x,y) = (1-x)^2 + 100(y-x^2)^2:");
+        WriteLine("   Find the roots of f(x,y) = (1-x)^2 + 100(y-x^2)^2 by finding the roots of it's gradient:");
         WriteLine($"   The roots are at: {res_21[0]}, {res_22[0]}  (should be x=1, y=1)  and {res_21[1]}, {res_22[1]}  (should be x^2=y)\n");
     }
 
