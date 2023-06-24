@@ -1,1 +1,28 @@
-Approximate integral: 0.333350481429017
+Approximate integral (check 2): 0.333333333333333
+Approximate integral (sub2): 0.333333333333333
+
+Testing the implementation of the integration algorithm on some integrals.
+The result is compared to the expected values with uncertainty 10e-4.
+..........................................................................
+
+1)
+Integral of [Sqrt(x)] in respect of x with limit (0,1) is: 0.666953909054655.
+
+It should be 2/3.
+In this case this is: 
+True
+-0.000287242387988385
+4)
+Integral of [ln(x)/sqrt(x)] in respect of x with limit (0,1) is: -3.99991705899915.
+
+It should be -4.
+In this case this is: 
+True
+8.29410008478249E-05
+1)
+Integral of [Sqrt(x)] in respect of x with limit (0,1) is: 0.666880372047599.
+
+It should be 2/3.
+In this case this is: 
+True
+-0.000213705380932128
