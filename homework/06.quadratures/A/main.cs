@@ -6,11 +6,12 @@ public class main{
     public static void Main(){
         WriteLine("\nTesting the implementation of the integration algorithm on some integrals.\nThe result is compared to the expected values with uncertainty 10e-4.");
         WriteLine("..........................................................................\n");
-        int_1();
-        int_2();
-        int_3();
-        int_4();
+        int_1();        // Sqrt(x)
+        int_2();        // 1/Sqrt(x)
+        int_3();        // 4*Sqrt(1-x^2)
+        int_4();        // ln(x)/Sqrt(x)
         erf_data();
+
     }
 
     public static void int_1(){
@@ -69,7 +70,7 @@ public class main{
     }
 
     public static void erf_data(){
-        WriteLine("");
+        WriteLine();
         for(double i=-3.5; i<=3.5; i=i+1.0/32.0){
             double erf_i = rai.erf(i);
             WriteLine($"{i} {erf_i}");
