@@ -7,33 +7,25 @@ public class main
 {
     public static void Main(string[] args)
     {
-        //check_1();
+        WriteLine("\nCompare the results for the algorith with division into 2 and 3 subintervals respectively.\nCalculation for function f(x)=x^2 (expected value 1/3)");
+        check_1();
         check_2();
-        check_3();
-        WriteLine("\nTesting the implementation of the integration algorithm on some integrals.\nThe result is compared to the expected values with uncertainty 10e-4.");
-        WriteLine("..........................................................................\n");
+        WriteLine("\nTesting the implementation of the integration algorithm (2 subintervals).\nThe result is compared to the expected values with uncertainty 10e-4.");
+        //WriteLine("..........................................................................\n");
         int_1();        // Sqrt(x)
-        //int_2();        // 1/Sqrt(x)
-        //int_3();        // 4*Sqrt(1-x^2)
+        int_2();        // 1/Sqrt(x)
+        int_3();        // 4*Sqrt(1-x^2)
         int_4();        // ln(x)/Sqrt(x)
+        WriteLine("\nTesting the implementation of the integration algorithm (3 subintervals).\nThe result is compared to the expected values with uncertainty 10e-4.");
         int_1b();        // Sqrt(x)
-        //int_2b();        // 1/Sqrt(x)
-        //int_3b();        // 4*Sqrt(1-x^2)
-        //int_4b();        // ln(x)/Sqrt(x)
+        int_2b();        // 1/Sqrt(x)
+        int_3b();        // 4*Sqrt(1-x^2)
+        int_4b();        // ln(x)/Sqrt(x)
         //erf_data();
 
     }
-/*
-    public static void check_1(){
-        Func<double, double> f = x => x * x; // Example function: f(x) = x^2
-        double a = 0.0;
-        double b = 1.0;
 
-        double result = AdaptiveIntegrator.Integrate(f, a, b);
-        Console.WriteLine("Approximate integral (check 1): " + result);
-    }
-*/
-    public static void check_2()
+    public static void check_1()
     {
         Func<double, double> f = x => x * x; // Example function: f(x) = x^2
         double a = 0.0;
@@ -43,7 +35,7 @@ public class main
         Console.WriteLine("Approximate integral (check 2): " + result);
     }
 
-        public static void check_3()
+        public static void check_2()
     {
         Func<double, double> f = x => x * x; // Example function: f(x) = x^2
         double a = 0.0;
@@ -77,7 +69,7 @@ public class main
         WriteLine($"\nIt should be 2.\nIn this case this is: ");
         approx(expected, integral);
     }
-/*
+
     public static void int_3(){
         Func<double,double> f = x => 4*Sqrt(1-Pow(x,2));
         double a = 0.0;
@@ -88,7 +80,7 @@ public class main
         WriteLine($"\nIt should be pi.\nIn this case this is: ");
         approx(expected, integral);
     }
-*/
+
     public static void int_4(){
         Func<double,double> f = x => Log(x)/Sqrt(x);
         double a = 0.0;
@@ -122,7 +114,7 @@ public class main
         WriteLine($"\nIt should be 2.\nIn this case this is: ");
         approx(expected, integral);
     }
-/*
+
     public static void int_3b(){
         Func<double,double> f = x => 4*Sqrt(1-Pow(x,2));
         double a = 0.0;
@@ -133,8 +125,8 @@ public class main
         WriteLine($"\nIt should be pi.\nIn this case this is: ");
         approx(expected, integral);
     }
-*/
-/*    public static void int_4b(){
+
+    public static void int_4b(){
         Func<double,double> f = x => Log(x)/Sqrt(x);
         double a = 0.0;
         double b = 1.0;
@@ -144,10 +136,10 @@ public class main
         WriteLine($"\nIt should be -4.\nIn this case this is: ");
         approx(expected, integral);
     }
-*/
+/*
     public static void approx(double e, double i){
         //double e = expected;
-        double t = Pow(10,-4);
+        double t = Pow(10,-4);      //tolerance
         //double i = integral;
         double diff = Abs(e)-Abs(i);
         if (diff < t){
@@ -155,4 +147,18 @@ public class main
         }
         else WriteLine("False\n" + diff);
     }
+*/
+    public static void approx(double e, double i)
+{
+    double t = Pow(10, -4); // tolerance
+    double diff = Abs(e - i);
+    if (diff < t)
+    {
+        WriteLine("True\n" + diff);
+    }
+    else
+    {
+        WriteLine("False\n" + diff);
+    }
+}
 }
