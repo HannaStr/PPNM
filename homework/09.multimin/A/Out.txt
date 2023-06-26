@@ -2,3 +2,14 @@
 Find the extrema of the Rosenbrock's Valley function of f(x)=(1-x^2)^2+100(y-x^2)^2:
 The minimum is at (x,y) = (1.00470362419852, 1.00943835656316) (should be (1,1)),
 starting at (1.1,2) with 1983 steps
+
+1) Find a minimum of the Rosenbrock's Valley function [f(x,y)=(1-x)^2+100(y-x^2)^2]
+
+
+Minima of Rosenbrock's Valley Function are: 
+
+x = 0.99530947714422   should be 1
+
+y = 0.990630792916315   should be 1
+
+steps = 853

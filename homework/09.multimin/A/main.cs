@@ -6,7 +6,7 @@ public class main{
 
     public static void Main(){
         Rosenbrock_func();
-        //RV_func();
+        RV_func();
         //H_func();
     }
 
@@ -25,7 +25,13 @@ public class main{
 
     //Himmelblau's Function ==> f(x,y) = (x^2 + y - 11)^2 + (x + y^2 -7)^2
     public static void RV_func(){
-        WriteLine("\n1) Find a minimum of the Rosenbrock's Valley function [f(x,y)=(1-x)^2+100(y-x^2)^2]");
-
+        WriteLine("\n1) Find a minimum of the Rosenbrock's Valley function [f(x,y)=(1-x)^2+100(y-x^2)^2]\n");
+        Func<vector, double> f = (x) => (1-x[0])*(1-x[0]) + 100*(x[1]-x[0]*x[0])*(x[1]-x[0]*x[0]);
+        vector start = new vector (1.0, 2.0);
+        var (res, step) = multimin.qnewton(f,start);
+        WriteLine("\nMinima of Rosenbrock's Valley Function are: ");
+        WriteLine($"\nx = {res[0]}   should be 1"); 
+        WriteLine($"\ny = {res[1]}   should be 1");
+        WriteLine("\nsteps = " + step);
     }
 }

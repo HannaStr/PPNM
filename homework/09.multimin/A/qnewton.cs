@@ -3,6 +3,7 @@ using static System.Math;
 
 public static class multimin{
 
+// QUASI-NEWTON MINIMIZATION
     public static (vector,int) qnewton(
         Func<vector,double> f,          //objective function
         vector x,                   //startin point
@@ -24,12 +25,15 @@ public static class multimin{
 
         //repeat until converged (e.g. |grad_x|<tolerance):
         while (grad_x.norm() > acc){
+
             //calculate the Newton's step del_x = -B*grad_x
             vector del_x = -B*grad_x;
+
             //do linesearch starting with lambda = 1:
             double lam = 1.0;
             double fx = f(x);
 
+// BACK-TRACKING LINESEARCH 
 
             while(true){                    //linesearch ==> infinite loop until the command "break"
 
@@ -37,8 +41,11 @@ public static class multimin{
                 s = lam*del_x;
                 if (f(x + s) < f(x)){
                     vector grad_x_NOs = grad_x;
+
                     //x = x + lambda*del_x
                     x = x + s;
+
+// RANK-1 UPDATE
 
                     //update B = B+dB (rank-1 update)
                     grad_x = num_grad(f,x);
@@ -53,18 +60,24 @@ public static class multimin{
                     //break linesearch
                     break;
                 }
+
                 //lambda = lambda/2
                 lam = lam/2;
+
                 //if lambda < 1/1024 accept the step and reset B:
                 if (lam < 1.0/1024){
+
                     //x = x+lambda*del_x
                     x = x + s;
                     grad_x = num_grad(f,x);
+
                     //B=1
                     B = matrix.id(n);
+
                     //break linsearch
                     break;
                 }
+                
                 //continue linesearch
             }
             step++;
@@ -73,7 +86,7 @@ public static class multimin{
 
     }
 
-
+// NUMERICAL GRADIENT
 
     public static vector num_grad(
         Func<vector,double> f,
