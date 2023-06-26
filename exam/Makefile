@@ -6,10 +6,10 @@ all: Out.txt #erf.svg
 Out.txt: main.exe
 	mono $< >$@
 
-main.exe: main.cs rai.dll
-	mcs -target:exe -reference:rai.dll $<
+main.exe: main.cs ari.dll
+	mcs -target:exe -reference:ari.dll $<
 
-rai.dll: rai.cs
+ari.dll: ari.cs
 	mcs -target:library $<
 
 clean:

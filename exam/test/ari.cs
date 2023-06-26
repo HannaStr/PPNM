@@ -52,6 +52,10 @@ public class AdaptiveIntegrator
         }
     }
 
+    public static double weights(a,b, N){
+        double beta = .5/sqrt(1-(2*(1:N-1)).)
+    }
+
 /*
 //AI
     public static double integrate_sub3_AI(
