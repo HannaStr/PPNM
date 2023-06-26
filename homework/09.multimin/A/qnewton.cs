@@ -31,7 +31,7 @@ public static class multimin{
 
             //do linesearch starting with lambda = 1:
             double lam = 1.0;
-            double fx = f(x);
+            //double fx = f(x);
 
 // BACK-TRACKING LINESEARCH 
 
@@ -77,7 +77,7 @@ public static class multimin{
                     //break linsearch
                     break;
                 }
-                
+
                 //continue linesearch
             }
             step++;
@@ -105,5 +105,32 @@ public static class multimin{
             grad[i] = (f(x_plus) - f(x_minus))/(2.0*del);
         }
         return grad;
+    }
+
+
+        public static vector numeric_gradient(
+        Func<vector,double> f,
+        vector x
+    ){
+        double Delta = Pow(2,-26);
+
+        int n = x.size;
+        vector gradient = new vector(n);
+        double f_x = f(x);
+        for(int i=0; i<n; i++){
+            double dx;
+            double x_i = x[i];
+            if(Abs(x_i)<Sqrt(Delta)){
+                dx = Delta;
+            }
+            else{
+                dx = Abs(x_i)*Delta;
+            };
+
+            x[i] = x_i+dx;
+            gradient[i] = (f(x)-f_x)/dx;
+            x[i] = x_i;
+        }
+        return gradient;
     }
 }
