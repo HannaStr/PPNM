@@ -107,7 +107,7 @@ public static class multimin{
         return grad;
     }
 
-
+/*
         public static vector numeric_gradient(
         Func<vector,double> f,
         vector x
@@ -133,4 +133,5 @@ public static class multimin{
         }
         return gradient;
     }
+*/
 }
