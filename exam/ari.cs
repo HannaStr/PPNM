@@ -2,16 +2,18 @@ using System;
 using static System.Math;
 using static System.Double;
 
-public class AdaptiveIntegrator
-{
+public class AdaptiveIntegrator{
+
+    //double DEL = 0.0001;
+    //double EPS = 0.0001;
 
 //current one
     public static double integrate_sub3(
         Func<double, double> f,
         double a,               // start point of integral
         double b,               // end point of integral
-        double del = 0.0001,              //0.0001,
-        double eps = 0.0001,            //0.0001,
+        double del = 0.00001 ,              //0.0001,
+        double eps = 0.00001,            //0.0001,
         double f2 = NaN
     ){
         double h = b - a;
@@ -59,8 +61,8 @@ public class AdaptiveIntegrator
         Func<double,double> f, 
         double a,               //start point of integral 
         double b,               //end point of integral
-        double del = 0.0001,
-        double eps = 0.0001,
+        double del = 0.00001,
+        double eps = 0.00001,
         double f2 = NaN,
         double f3 = NaN
     ){
@@ -79,24 +81,44 @@ public class AdaptiveIntegrator
                     integrate_sub2 (f, (a+b)/2, b, del/Sqrt(2), eps, f3, f4);
 
     }
-/*
+
     //error function
-    public static double erf(double z){
+    public static double erf_sub2(double z){
         if (1.0 < z){
             Func<double,double> f = t =>  Exp(-Pow(z+(1-t)/t, 2))/t/t;      //function we want to integrate
             double a = 0.0;
             double b = 1.0;
-            double integral = rai.integrate(f, a, b);
+            double integral = AdaptiveIntegrator.integrate_sub2(f, a, b);
             return 1 - 2.0/Sqrt(PI)*integral;
         }
         if (Abs(z) <= 1.0){
             Func<double, double> f = x => Exp(-Pow(x, 2));
             double a = 0.0;
             double b = z;
-            double integral = rai.integrate(f, a, b);
+            double integral = AdaptiveIntegrator.integrate_sub2(f, a, b);
             return 2/Sqrt(PI)*integral;
         }
-        else return -erf(-z);                                               //if(z<0.0)
+        else return -erf_sub2(-z);                                               //if(z<0.0)
     }
-*/
+
+    public static double erf_sub3(double z){
+        if (1.0 < z){
+            Func<double,double> f = t =>  Exp(-Pow(z+(1-t)/t, 2))/t/t;      //function we want to integrate
+            double a = 0.0;
+            double b = 1.0;
+            double integral = AdaptiveIntegrator.integrate_sub3(f, a, b);
+            return 1 - 2.0/Sqrt(PI)*integral;
+        }
+        if (Abs(z) <= 1.0){
+            Func<double, double> f = x => Exp(-Pow(x, 2));
+            double a = 0.0;
+            double b = z;
+            double integral = AdaptiveIntegrator.integrate_sub3(f, a, b);
+            return 2/Sqrt(PI)*integral;
+        }
+        else return -erf_sub3(-z);                                               //if(z<0.0)
+    }
+
+
+
 }

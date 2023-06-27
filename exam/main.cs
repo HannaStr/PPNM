@@ -21,10 +21,12 @@ public class main
         WriteLine("Testing the implementation of the integration algorithm (3 subintervals).\nThe result is compared to the expected values with uncertainty 10e-4.");
         WriteLine("..........................................................................\n");
         int_1b();        // Sqrt(x)
-        //int_2b();        // 1/Sqrt(x)
+        int_2b();        // 1/Sqrt(x)
         int_3b();        // 4*Sqrt(1-x^2)
-        //int_4b();        // ln(x)/Sqrt(x)
-        //erf_data();
+        int_4b();        // ln(x)/Sqrt(x)
+        //erf_sub2_data();
+        //WriteLine("\n\n");
+        //erf__sub3_data();
 
     }
 
@@ -57,7 +59,7 @@ public class main
         double b = 1.0;
         double integral = AdaptiveIntegrator.integrate_sub2(f,a,b);
         double expected = 2.0/3.0;
-        WriteLine($"1)\nIntegral of [Sqrt(x)] in respect of x with limit (0,1) is: {integral}.");
+        WriteLine($"\n1) Integral of [Sqrt(x)] in respect of x with limit (0,1) is: {integral}.");
         WriteLine($"\nIt should be 2/3.\nIn this case this is: ");
         approx(expected, integral);
     }
@@ -68,7 +70,7 @@ public class main
         double b = 1.0;
         double integral = AdaptiveIntegrator.integrate_sub2(f,a,b);
         double expected = 2.0;
-        WriteLine($"2)\nIntegral of [1/Sqrt(x)] in respect of x with limit (0,1) is: {integral}.");
+        WriteLine($"\n2) Integral of [1/Sqrt(x)] in respect of x with limit (0,1) is: {integral}.");
         WriteLine($"\nIt should be 2.\nIn this case this is: ");
         approx(expected, integral);
     }
@@ -79,7 +81,7 @@ public class main
         double b = 1.0;
         double integral = AdaptiveIntegrator.integrate_sub2(f,a,b);
         double expected = PI;
-        WriteLine($"3)\nIntegral of [4*sqrt(1-x^2)] in respect of x with limit (0,1) is: {integral}.");
+        WriteLine($"\n3) Integral of [4*sqrt(1-x^2)] in respect of x with limit (0,1) is: {integral}.");
         WriteLine($"\nIt should be pi.\nIn this case this is: ");
         approx(expected, integral);
     }
@@ -90,7 +92,7 @@ public class main
         double b = 1.0;
         double integral = AdaptiveIntegrator.integrate_sub2(f,a,b);
         double expected = -4;
-        WriteLine($"4)\nIntegral of [ln(x)/sqrt(x)] in respect of x with limit (0,1) is: {integral}.");
+        WriteLine($"\n4) Integral of [ln(x)/sqrt(x)] in respect of x with limit (0,1) is: {integral}.");
         WriteLine($"\nIt should be -4.\nIn this case this is: ");
         approx(expected, integral);
     }
@@ -102,18 +104,18 @@ public class main
         double b = 1.0;
         double integral = AdaptiveIntegrator.integrate_sub3(f,a,b);
         double expected = 2.0/3.0;
-        WriteLine($"1)\nIntegral of [Sqrt(x)] in respect of x with limit (0,1) is: {integral}.");
+        WriteLine($"\n1) Integral of [Sqrt(x)] in respect of x with limit (0,1) is: {integral}.");
         WriteLine($"\nIt should be 2/3.\nIn this case this is: ");
         approx(expected, integral);
     }
 
     public static void int_2b(){
         Func<double,double> f = x => 1/Sqrt(x);
-        double a = 0.0;
+        double a = 2e-16;
         double b = 1.0;
         double integral = AdaptiveIntegrator.integrate_sub3(f,a,b);
         double expected = 2.0;
-        WriteLine($"2)\nIntegral of [1/Sqrt(x)] in respect of x with limit (0,1) is: {integral}.");
+        WriteLine($"\n2) Integral of [1/Sqrt(x)] in respect of x with limit (0,1) is: {integral}.");
         WriteLine($"\nIt should be 2.\nIn this case this is: ");
         approx(expected, integral);
     }
@@ -124,23 +126,21 @@ public class main
         double b = 1.0;
         double integral = AdaptiveIntegrator.integrate_sub3(f,a,b);
         double expected = PI;
-        WriteLine($"3)\nIntegral of [4*sqrt(1-x^2)] in respect of x with limit (0,1) is: {integral}.");
+        WriteLine($"\n3) Integral of [4*sqrt(1-x^2)] in respect of x with limit (0,1) is: {integral}.");
         WriteLine($"\nIt should be pi.\nIn this case this is: ");
         approx(expected, integral);
     }
 
     public static void int_4b(){
         Func<double,double> f = x => Log(x)/Sqrt(x);
-        double a = 0.0;
+        double a = 2e-30;
         double b = 1.0;
         double integral = AdaptiveIntegrator.integrate_sub3(f,a,b);
         double expected = -4.0;
-        WriteLine($"4)\nIntegral of [ln(x)/sqrt(x)] in respect of x with limit (0,1) is: {integral}.");
+        WriteLine($"\n4) Integral of [ln(x)/sqrt(x)] in respect of x with limit (0,1) is: {integral}.");
         WriteLine($"\nIt should be -4.\nIn this case this is: ");
         approx(expected, integral);
     }
-
-
 
 
     public static void approx(double e, double i){
@@ -155,4 +155,21 @@ public class main
             WriteLine("False\n" + diff);
         }
     }
+/*
+    public static void erf_sub2_data(){
+        WriteLine();
+        for(double i=-3.5; i<=3.5; i=i+1.0/32.0){
+            double erf_i = AdaptiveIntegrator.erf_sub2(i);
+            WriteLine($"{i} {erf_i}");
+        }        
+    }
+
+    public static void erf__sub3_data(){
+        WriteLine();
+        for(double i=-3.5; i<=3.5; i=i+1.0/32.0){
+            double erf_i = AdaptiveIntegrator.erf_sub3(i);
+            WriteLine($"{i} {erf_i}");
+        }        
+    }
+*/    
 }

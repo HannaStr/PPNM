@@ -1,7 +1,13 @@
-all: Out.txt #erf.svg
+all: Out.txt erf.svg
 
-#erf.svg: erf.gpi Out.txt
-#	gnuplot $<
+erf.svg: erf.gpi erf.data #Out.txt
+	gnuplot $<
+
+erf.data: erf.exe
+	mono $< > $@
+
+erf.exe: erf.cs ari.dll
+	mcs -target:exe -reference:ari.dll $<
 
 Out.txt: main.exe
 	mono $< >$@
