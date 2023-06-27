@@ -7,33 +7,33 @@ The result is compared to the expected values with uncertainty 10e-4.
 ..........................................................................
 
 
-1) Integral of [Sqrt(x)] in respect of x with limit (0,1) is: 0.666666970048681.
+1) Integral of [Sqrt(x)] in respect of x with limit (0,1) is: 0.666680932893738.
 
 It should be 2/3.
 In this case this is: 
 True
-3.03382014732456E-07
+1.42662270710137E-05
 
-2) Integral of [1/Sqrt(x)] in respect of x with limit (0,1) is: 1.99999994818932.
+2) Integral of [1/Sqrt(x)] in respect of x with limit (0,1) is: 1.99999738796403.
 
 It should be 2.
 In this case this is: 
 True
-5.18106841873589E-08
+2.61203597218262E-06
 
-3) Integral of [4*sqrt(1-x^2)] in respect of x with limit (0,1) is: 3.14159283639132.
+3) Integral of [4*sqrt(1-x^2)] in respect of x with limit (0,1) is: 3.14159750770263.
 
 It should be pi.
 In this case this is: 
 True
-1.82801529469145E-07
+4.85411283746018E-06
 
-4) Integral of [ln(x)/sqrt(x)] in respect of x with limit (0,1) is: -3.99999997309636.
+4) Integral of [ln(x)/sqrt(x)] in respect of x with limit (0,1) is: -3.99999834899021.
 
 It should be -4.
 In this case this is: 
 True
-2.69036410927015E-08
+1.65100979110377E-06
 
 ..........................................................................
 Testing the implementation of the integration algorithm (3 subintervals).
@@ -41,30 +41,30 @@ The result is compared to the expected values with uncertainty 10e-4.
 ..........................................................................
 
 
-1) Integral of [Sqrt(x)] in respect of x with limit (0,1) is: 0.666667064710136.
+1) Integral of [Sqrt(x)] in respect of x with limit (0,1) is: 0.666677131833219.
 
 It should be 2/3.
 In this case this is: 
 True
-3.9804346962935E-07
+1.04651665523425E-05
 
-2) Integral of [1/Sqrt(x)] in respect of x with limit (0,1) is: 1.99999992042542.
+2) Integral of [1/Sqrt(x)] in respect of x with limit (0,1) is: 1.99999599227068.
 
 It should be 2.
 In this case this is: 
 True
-7.95745842552265E-08
+4.00772931663518E-06
 
-3) Integral of [4*sqrt(1-x^2)] in respect of x with limit (0,1) is: 3.14159276785111.
+3) Integral of [4*sqrt(1-x^2)] in respect of x with limit (0,1) is: 3.14160232781399.
 
 It should be pi.
 In this case this is: 
 True
-1.14261319072995E-07
+9.67422420128372E-06
 
-4) Integral of [ln(x)/sqrt(x)] in respect of x with limit (0,1) is: -3.9999999696611.
+4) Integral of [ln(x)/sqrt(x)] in respect of x with limit (0,1) is: -3.99999828974736.
 
 It should be -4.
 In this case this is: 
 True
-3.03388958400319E-08
+1.71025264439351E-06

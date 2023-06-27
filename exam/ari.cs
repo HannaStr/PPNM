@@ -12,8 +12,8 @@ public class AdaptiveIntegrator{
         Func<double, double> f,
         double a,               // start point of integral
         double b,               // end point of integral
-        double del = 0.00001 ,              //0.0001,
-        double eps = 0.00001,            //0.0001,
+        double del = 0.0001 ,              //0.0001,
+        double eps = 0.0001,            //0.0001,
         double f2 = NaN
     ){
         double h = b - a;
@@ -61,8 +61,8 @@ public class AdaptiveIntegrator{
         Func<double,double> f, 
         double a,               //start point of integral 
         double b,               //end point of integral
-        double del = 0.00001,
-        double eps = 0.00001,
+        double del = 0.0001,
+        double eps = 0.0001,
         double f2 = NaN,
         double f3 = NaN
     ){
