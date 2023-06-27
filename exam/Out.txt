@@ -1,11 +1,11 @@
 
-Compare the results for the algorith with division into 2 and 3 subintervals respectively.
-Calculation for function f(x)=x^2 (expected value 1/3)
-Approximate integral (check 2): 0.333333333333333
-Approximate integral (sub2): 0.333333333333333
+TASK: Compare the results for the algorith with division into 2 and 3 subintervals respectively.
 
+..........................................................................
 Testing the implementation of the integration algorithm (2 subintervals).
 The result is compared to the expected values with uncertainty 10e-4.
+..........................................................................
+
 1)
 Integral of [Sqrt(x)] in respect of x with limit (0,1) is: 0.666680932893738.
 
@@ -35,8 +35,11 @@ In this case this is:
 True
 1.65100979110377E-06
 
+..........................................................................
 Testing the implementation of the integration algorithm (3 subintervals).
 The result is compared to the expected values with uncertainty 10e-4.
+..........................................................................
+
 1)
 Integral of [Sqrt(x)] in respect of x with limit (0,1) is: 0.666677131833219.
 
@@ -44,3 +47,10 @@ It should be 2/3.
 In this case this is: 
 True
 1.04651665523425E-05
+3)
+Integral of [4*sqrt(1-x^2)] in respect of x with limit (0,1) is: 3.14160232781399.
+
+It should be pi.
+In this case this is: 
+True
+9.67422420128372E-06

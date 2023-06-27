@@ -7,20 +7,23 @@ public class main
 {
     public static void Main(string[] args)
     {
-        WriteLine("\nCompare the results for the algorith with division into 2 and 3 subintervals respectively.\nCalculation for function f(x)=x^2 (expected value 1/3)");
-        check_1();
-        check_2();
-        WriteLine("\nTesting the implementation of the integration algorithm (2 subintervals).\nThe result is compared to the expected values with uncertainty 10e-4.");
-        //WriteLine("..........................................................................\n");
+        WriteLine("\nTASK: Compare the results for the algorith with division into 2 and 3 subintervals respectively.\n");
+        //check_1();
+        //check_2();
+        WriteLine("..........................................................................");
+        WriteLine("Testing the implementation of the integration algorithm (2 subintervals).\nThe result is compared to the expected values with uncertainty 10e-4.");
+        WriteLine("..........................................................................\n");
         int_1();        // Sqrt(x)
         int_2();        // 1/Sqrt(x)
         int_3();        // 4*Sqrt(1-x^2)
         int_4();        // ln(x)/Sqrt(x)
-        WriteLine("\nTesting the implementation of the integration algorithm (3 subintervals).\nThe result is compared to the expected values with uncertainty 10e-4.");
+        WriteLine("\n..........................................................................");
+        WriteLine("Testing the implementation of the integration algorithm (3 subintervals).\nThe result is compared to the expected values with uncertainty 10e-4.");
+        WriteLine("..........................................................................\n");
         int_1b();        // Sqrt(x)
-        int_2b();        // 1/Sqrt(x)
+        //int_2b();        // 1/Sqrt(x)
         int_3b();        // 4*Sqrt(1-x^2)
-        int_4b();        // ln(x)/Sqrt(x)
+        //int_4b();        // ln(x)/Sqrt(x)
         //erf_data();
 
     }

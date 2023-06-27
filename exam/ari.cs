@@ -10,8 +10,8 @@ public class AdaptiveIntegrator
         Func<double, double> f,
         double a,               // start point of integral
         double b,               // end point of integral
-        double delta = 0.0001,              //0.0001,
-        double epsilon = 0.0001,            //0.0001,
+        double del = 0.0001,              //0.0001,
+        double eps = 0.0001,            //0.0001,
         double f2 = NaN
     ){
         double h = b - a;
@@ -26,7 +26,7 @@ public class AdaptiveIntegrator
         double q = ((f1 + f2 + f3) / 3) * h; // lower order rule
         double error = Abs(Q - q);
 
-        if (error <= delta + epsilon * Abs(Q))
+        if (error <= del + eps * Abs(Q))
         {
             return Q; // Accept the approximation
         }
@@ -34,14 +34,20 @@ public class AdaptiveIntegrator
         {
             double m1 = (2 * a + b) / 3.0;
             double m2 = (a + 2 * b) / 3.0;
-
+/*
             double integral = 0.0;
 
-            integral += integrate_sub3(f, a, m1, delta / Sqrt(3), epsilon, f1); // Integrate left sub-interval
-            integral += integrate_sub3(f, m1, m2, delta / Sqrt(3), epsilon, f2); // Integrate middle sub-interval
-            integral += integrate_sub3(f, m2, b, delta / Sqrt(3), epsilon, f3); // Integrate right sub-interval
+            integral += integrate_sub3(f, a, m1, del / Sqrt(3), eps, f1); // Integrate left sub-interval
+            integral += integrate_sub3(f, m1, m2, del / Sqrt(3), eps, f2); // Integrate middle sub-interval
+            integral += integrate_sub3(f, m2, b, del / Sqrt(3), eps, f3); // Integrate right sub-interval
 
             return integral;
+*/
+            return  integrate_sub3(f, a , m1, del / Sqrt(3), eps, f1) + 
+                    integrate_sub3(f, m1, m2, del / Sqrt(3), eps, f2) +
+                    integrate_sub3(f, m2, b, del / Sqrt(3), eps, f3); 
+
+                    
         }
     }
 
