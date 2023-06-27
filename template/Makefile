@@ -1,15 +1,22 @@
+all: Out.txt
+
 Out.txt : main.exe
 	mono $< > $@
 
-main.exe: main.cs matrix.dll NAME.dll
-	mcs -target:exe -reference:matrix.dll -reference:NAME.dll $<
+main.exe: main.cs matrix/vector.dll NAME.dll
+	mcs -target:exe -reference:matrix/vector.dll -reference:NAME.dll $<
 
-NAME.dll: NAME.cs matrix.dll
-	mcs -target:library -reference:matrix.dll $<
+NAME.dll: NAME.cs matrix/vector.dll QRGS.dll
+	mcs -target:library -reference:matrix/vector.dll -reference: QRGS.dll $<
 
-LIBPATH = ../../../matlib/vector							#must be changed for my repository
+QRGS_PATH = ../../01.lineq/B
 
-matrix.dll : $(LIBPATH)/vector.cs $(LIBPATH)/matrix.cs
+QRGS.dll: $(QRGS_PATH)/QRGS.cs matrix/vector.dll
+	mcs -target:library -reference:matrix/vector.dll -out:./$@ $<
+
+MATLIB_PATH = ../../../matlib							
+
+matrix/vector.dll : $(MATLIB_PATH)/vector.cs $(MATLIB_PATH)/matrix.cs
 	mcs -target:library -out:$@ $^
 
 clean:

@@ -1,7 +1,7 @@
-all: Out.txt
+all: Out.txt plot.svg
 
-#plot.svg: plot.gpi Out.txt
-#	gnuplot $<
+plot.svg: plot.gpi Out.txt
+	gnuplot $<
 
 Out.txt: main.exe
 	mono $< > $@

@@ -1,0 +1,13 @@
+set terminal svg background "white"
+set output "plot.svg"
+set title "Artificial Neural Network approximation of g(x)=cos(5x-1)*exp(-x*x)"
+set xlabel "x"
+set ylabel "g(x)"
+set tics out
+set xzeroaxis
+set yzeroaxis
+set key top right
+set xrange [-1.1:1.1]
+plot "Out.txt" index 0 using 1:2 with points  pt 2 lc rgb "#453823" title "sample points"\
+, "Out.txt" index 1 using 1:2 with lines lw 2 dt 2 lc rgb "#4357AD" lt 3 title "analytical function g(x)"\
+, "Out.txt" index 1 using 1:3 with lines lw 1 lt 2 lc rgb "#F0A202"  title "ANN approximation"

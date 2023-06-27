@@ -3,42 +3,51 @@ using static System.Math;
 using static System.Console;
 
 
-public class main
-{
+public class main{
+
     public static void Main()
     {
-        // Define the tabulated function g(x) = Cos(5*x - 1) * Exp(-x*x)
+        //function g(x) = Cos(5*x - 1) * Exp(-x*x)
         Func<double, double> g = (x) => Cos(5 * x - 1) * Exp(-x * x);
 
-        // Generate sample points on the interval [-1, 1]
-        int numSamples = 20;
-        vector x_s = new vector(numSamples);
-        vector y_s = new vector(numSamples);
-        //var network = new ann(n);
+        // Sample points on the interval [-1, 1]
+        int ns = 20;       //number of sample points
+        vector x_s = new vector(ns);
+        vector y_s = new vector(ns);
+        double a = -1.0;
+        double b =  1.0;
+        //WriteLine($"\n{ns} sample points of the function g(x) = Cos(5*x - 1) * Exp(-x*x).\n");
 
-        for (int i = 0; i < numSamples; i++)
+        for (int i = 0; i < ns; i++)
         {
-            double xi = -1 + 2.0 * i / (numSamples - 1);
+            double xi = a + (b-a) * i / (ns - 1);
             double yi = g(xi);
             x_s[i] = xi;
             y_s[i] = yi;
+            WriteLine($"{x_s[i]} {y_s[i]}");
         }
 
-        // Train the artificial neural network to interpolate the tabulated function
-        int numHiddenNeurons = 10;
-        var network = new ann(numHiddenNeurons);
+        // Train your network to interpolate the tabulated function
+        int nr_hidden = 10;
+        var network = new ann(nr_hidden);
         network.train(x_s, y_s);
 
         // Test the trained network by evaluating its response at various points
-        int numTestPoints = 100;
-        double stepSize = 2.0 / (numTestPoints - 1);
+        int nrTestP = 100;      //number of test points
+        double stepSize = 2.0 / (nrTestP - 1);
+        
+        WriteLine();
+        WriteLine();
 
-        for (int i = 0; i < numTestPoints; i++)
+        //WriteLine("\nTesting the trained network\n   y_A = actual y for function g(x)\n   y_P = y for g(x) predicted by the neural network");
+        //WriteLine("Table is {x, y_A, y_P}:\n");
+        for (int i = 0; i < nrTestP; i++)
         {
             double xi = -1 + i * stepSize;
             double yiActual = g(xi);
             double yiPredicted = network.response(xi);
-            WriteLine($"x = {xi}, Actual y = {yiActual}, Predicted y = {yiPredicted}");
+            WriteLine($"{xi} {yiActual} {yiPredicted}");
         }
     }
+
 }
