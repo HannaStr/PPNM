@@ -12,7 +12,7 @@ main.exe: main.cs matrix.dll lsfit.dll
 lsfit.dll: lsfit.cs matrix.dll QRGS.dll
 	mcs -target:library -reference:matrix.dll -reference:QRGS.dll $<
 
-QRGS_DIR = ~/PPNM/homework/01.lineq
+QRGS_DIR = ~/PPNM/homework/01.lineq/A
 
 QRGS.dll: $(QRGS_DIR)/QRGS.cs matrix.dll
 	mcs -target:library -reference:matrix.dll -out:./$@ $<
