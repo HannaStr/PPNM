@@ -22,3 +22,6 @@ x = -2.80522799781891, y = 3.13143105330037   should be approx (-2.81, 3.13)   (
 x = -3.77936029422633, y = -3.28316225467528   should be approx (-3.78,-3.28)   (starting at -4.1,-3) ==> steps taken: 41
 
 x = 3.5844370380028, y = -1.8479056375656   should be approx ( 3.58,-1.85)   (starting at 3.1,-2) ==> steps taken: 40
+
+
+Note: The algorithm is taking quite a lot of steps to reach the minimum. This could be improved upon further.

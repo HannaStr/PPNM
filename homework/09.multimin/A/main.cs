@@ -8,6 +8,8 @@ public class main{
         //Rosenbrock_func();
         RV_func();
         H_func();
+
+        WriteLine("\n\nNote: The algorithm is taking quite a lot of steps to reach the minimum. This could be improved upon further.");
     }
 
 /*
