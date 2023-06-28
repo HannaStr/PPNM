@@ -1,0 +1,44 @@
+using System;
+using static System.Console;
+using static System.Math;
+
+public static class ls_sqr_fit{
+    public static (vector,matrix,vector) lsfit(Func<double,double>[] fs, vector x, vector y, vector dy){
+        //Solve A(n,m)c(m)=b(n) to get c
+        int n = x.size;                     //Fitting n (experimental) data points...
+        int m = fs.Length;                  //...by a linear combination of, fs, of m functions
+        
+        var A = new matrix (n,m);
+        var b = new vector (n);
+
+        // A_ik = f_k(x_i)/dy_i     and     b_i = y_i/dy_i  ; equation (14) in notes
+        // i-->n, k-->m
+        for (int i=0; i<n; i++){
+            b[i] = y[i]/dy[i];
+            for (int k=0; k<m; k++){
+                A[i,k] = fs[k](x[i])/dy[i];
+            }
+        }
+
+        //factorize A for QR (QRGS)
+        QRGS facQR = new QRGS(A);
+        vector c = facQR.solve(b);          //QR decomposition; QRGS.solve()
+
+
+
+        //MODIFICATIONS to add the covariance matrix etc
+
+        //Calculate covariance matrix
+        matrix AtA = A.transpose()*A;
+        QRGS R_AtA = new QRGS(AtA);
+        matrix cov = R_AtA.inverse(AtA);
+
+        //Calculate uncertainties (error) of fitting coefficients
+        vector err = new vector (m);
+        for (int j = 0; j < m; j++){
+            err[j] = Sqrt(cov[j,j]);
+        }
+
+        return (c, cov, err);
+    }
+}

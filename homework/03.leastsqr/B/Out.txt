@@ -1,0 +1,19 @@
+
+ThX is today known as Ra_224. 
+The modern value of its half-life time is T_1/2 = 3.6313(14) days. [1]
+
+T_1/2 of ThX from the least-quare fit is: 4.38379963473882
+With the uncertainty = 0.645175612035269
+
+Therefore, the result from the fit is 20.77% larger than the true value.
+
+The difference of the measured value to the true value is: 0.752499634738819 
+and this should be smaller than the error. In this case it's: False
+
+    0.0028   -0.00108   7.01e-05 
+  -0.00108   0.000542  -3.84e-05 
+  7.01e-05  -3.84e-05   2.99e-06 
+
+
+Sources:
+   [1] DOI: 10.1016/j.apradiso.2020.109572

@@ -1,0 +1,11 @@
+ set terminal svg background "white"
+ set output "radioactive_decay.svg"
+ set title "Ordinary Least-Squares Fit (by QR-decomposition) of Radioactive Decay"
+ set key top right;
+ set xlabel "Time [days]"
+ set ylabel "Per-cent Activity"
+ set xzeroaxis
+ set yzeroaxis
+ set tics out
+ plot "data.data" index 0 using 1:2:3 pt 6 ps 1 lt rgb "#3A1772" with yerrorbars title "Experimental data"\
+,"data.data" index 1 using 1:2 ls 2 lt rgb "#D741A7" with lines title "Least-Square Fit"
