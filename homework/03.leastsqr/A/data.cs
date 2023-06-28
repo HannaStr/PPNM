@@ -39,12 +39,5 @@ class data{
             WriteLine($"{k} {Exp(c_k[0])*Exp(c_k[1]*k)}");
 
         }
-/*
-        WriteLine("\nThX is today known as Ra_224. \nThe modern value of its half-life time is T_1/2 = 3.6313(14) days. [1]");
-        //half-life time is T_1/2 = ln(2)/lambda
-        WriteLine($"\nT_1/2 of ThX from the least-quare fit is: {Log(2)/Abs(c_k[1])}");
-        WriteLine($"\nTherefore, the result from the fit is {Round(((Log(2)/Abs(c_k[1])-3.63)/3.63)*100,2)}% larger than the true value.\n");
-        WriteLine("\nSources:\n   [1] DOI: 10.1016/j.apradiso.2020.109572");        
-*/    
     }
 }
