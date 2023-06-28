@@ -1,6 +1,9 @@
-all: Out.txt erf.svg
+all: Out.txt erf.svg erf_zoom.svg
 
-erf.svg: erf.gpi erf.data #Out.txt
+erf.svg: erf.gpi erf.data
+	gnuplot $<
+
+erf_zoom.svg: erf_zoom.gpi erf.data
 	gnuplot $<
 
 erf.data: erf.exe

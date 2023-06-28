@@ -4,10 +4,8 @@ using static System.Double;
 
 public class AdaptiveIntegrator{
 
-    //double DEL = 0.0001;
-    //double EPS = 0.0001;
 
-//current one
+//Adaptive Recursive Integrator using division into 3 subintervals
     public static double integrate_sub3(
         Func<double, double> f,
         double a,               // start point of integral
@@ -36,18 +34,11 @@ public class AdaptiveIntegrator{
         {
             double m1 = (2 * a + b) / 3.0;
             double m2 = (a + 2 * b) / 3.0;
-/*
-            double integral = 0.0;
 
-            integral += integrate_sub3(f, a, m1, del / Sqrt(3), eps, f1); // Integrate left sub-interval
-            integral += integrate_sub3(f, m1, m2, del / Sqrt(3), eps, f2); // Integrate middle sub-interval
-            integral += integrate_sub3(f, m2, b, del / Sqrt(3), eps, f3); // Integrate right sub-interval
+            return  integrate_sub3(f, a , m1, del / Sqrt(3), eps, f1) +         // Integrate left sub-interval
+                    integrate_sub3(f, m1, m2, del / Sqrt(3), eps, f2) +         // Integrate middle sub-interval
+                    integrate_sub3(f, m2, b, del / Sqrt(3), eps, f3);           // Integrate right sub-interval
 
-            return integral;
-*/
-            return  integrate_sub3(f, a , m1, del / Sqrt(3), eps, f1) + 
-                    integrate_sub3(f, m1, m2, del / Sqrt(3), eps, f2) +
-                    integrate_sub3(f, m2, b, del / Sqrt(3), eps, f3); 
 
                     
         }

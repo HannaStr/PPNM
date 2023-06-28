@@ -142,7 +142,7 @@ public class main
         approx(expected, integral);
     }
 
-
+//Checking if the results are within the chosen uncertainty of 10^-4
     public static void approx(double e, double i){
         double t = Pow(10, -4); // tolerance
         double diff = Abs(e - i);
@@ -155,21 +155,4 @@ public class main
             WriteLine("False\n" + diff);
         }
     }
-/*
-    public static void erf_sub2_data(){
-        WriteLine();
-        for(double i=-3.5; i<=3.5; i=i+1.0/32.0){
-            double erf_i = AdaptiveIntegrator.erf_sub2(i);
-            WriteLine($"{i} {erf_i}");
-        }        
-    }
-
-    public static void erf__sub3_data(){
-        WriteLine();
-        for(double i=-3.5; i<=3.5; i=i+1.0/32.0){
-            double erf_i = AdaptiveIntegrator.erf_sub3(i);
-            WriteLine($"{i} {erf_i}");
-        }        
-    }
-*/    
 }

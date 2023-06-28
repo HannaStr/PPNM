@@ -1,0 +1,14 @@
+set terminal svg background "white"
+set output "erf_zoom.svg"
+set title "Plot of the Error Function (zoomed in)"
+set key bottom right
+set xlabel "z"
+set ylabel "erf (z)"
+set tics out
+set xzeroaxis
+set yzeroaxis
+set xrange [-0.5:1.5]
+set yrange [-1.1:1.1]
+plot 'erf.data' index 0 using 1:2 with lines lw 3 lc rgb '#2e86ab' title "Erf with subdivision to 2"\
+, 'erf.data' index 1 using 1:2 with lines lt 1 lw 2 lc rgb '#f18f01' title "Erf with subdivision to 3"\
+, 'erf_wiki.data' using 1:2 with points pt 2 lc rgb '#a23b72' title "data from Wikipedia"

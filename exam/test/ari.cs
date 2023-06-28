@@ -57,7 +57,6 @@ public class AdaptiveIntegrator
     }
 
 /*
-//AI
     public static double integrate_sub3_AI(
         Func<double, double> f,
         double a,               // start point of integral
