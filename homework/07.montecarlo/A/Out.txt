@@ -1,9 +1,10 @@
 
 1) Find area of a unit circle
 
-The area of a unit circle is: 3.14393263998783 with an error of 0.00181385281672394
+The area of a unit circle is: 3.14244322914223 with an error of 0.00181373282999054
 
 The result should be = 3.14159265358979.
+The result is equal to the expected value (within the error limits).
 The error should scale as 1/sqrt(N) = 0.001.
 
 
@@ -12,8 +13,9 @@ The error should scale as 1/sqrt(N) = 0.001.
 The integral is: int(0,pi)dx int(0,pi)dy int(0,pi)dz (1/pi^3)*[1-cos(x)cos(y)cos(z)]^(-1), 
 where 'int(0,pi)' means integral with limits from 0 to pi.
 
-The integral gives a result: 1.41985024607701 with an error of 0.0225797032651676
+The integral gives a result: 1.38285865982975 with an error of 0.00569593711183416
 
 The result should be = 1.39320392968568.
+The result is NOT equal to the expected value (within the error limits).
 The error should scale as 1/sqrt(N) = 0.001.
 
