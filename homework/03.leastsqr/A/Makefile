@@ -1,10 +1,16 @@
 all: Out.txt Plot.svg
 
-Plot.svg: plot.gpi Out.txt
+Plot.svg: plot.gpi data.data #Out.txt
 	gnuplot $<
 
 Out.txt: main.exe
 	mono $< > $@
+
+data.data: data.exe
+	mono $< > $@
+
+data.exe: data.cs lsfit.dll matrix.dll
+	mcs -target:exe -reference:lsfit.dll -reference:matrix.dll $<
 
 main.exe: main.cs matrix.dll lsfit.dll
 	mcs -target:exe -reference:matrix.dll -reference:lsfit.dll $<
@@ -16,7 +22,6 @@ QRGS_DIR = ~/PPNM/homework/01.lineq/A
 
 QRGS.dll: $(QRGS_DIR)/QRGS.cs matrix.dll
 	mcs -target:library -reference:matrix.dll -out:./$@ $<
-
 
 MATLIB_PATH = ../../../matlib
 
