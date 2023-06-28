@@ -26,20 +26,8 @@ class main{
 
         //Calculate the fitting parameters c_k
         vector c_k = ls_sqr_fit.lsfit(fs, t, ln_y, d_ln_y);
-/*
-        for(int i=0; i<n; i++){
-            WriteLine($"{t[i]} {y[i]} {dy[i]}");
-        }
 
-        WriteLine("\n");
 
-        //to get the best fit for y we need coefficients a and lambda
-        //c_k[0]=a, c_k[1]=lamda
-        for(double k=0.5; k<16; k+=0.5){
-            WriteLine($"{k} {Exp(c_k[0])*Exp(c_k[1]*k)}");
-
-        }
-*/
         WriteLine("\nThX is today known as Ra_224. \nThe modern value of its half-life time is T_1/2 = 3.6313(14) days. [1]");
         //half-life time is T_1/2 = ln(2)/lambda
         WriteLine($"\nT_1/2 of ThX from the least-quare fit is: {Log(2)/Abs(c_k[1])}");

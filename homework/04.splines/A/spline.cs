@@ -1,4 +1,4 @@
-using System;
+  using System;
 using static System.Console;
 using static System.Math;
 
@@ -23,8 +23,9 @@ public class spline{
         return i;
     }
 
+    // calculate (analytically) the integral of the linear spline from point x[0] to a given point z
     public static double linterpInteg(double[] x, double[] y, double z){
-        double int_s = 0;
+        double sum = 0;
         int z_bis = binsearch(x,z);
         for(int i = 0; i < z_bis; i++){
             //eq (6) in notes
@@ -32,11 +33,11 @@ public class spline{
             double dy = y[i+1]-y[i];
             double p = dy/dx;
             //eq (8) in notes
-            int_s += y[i]*(x[i+1]-x[i]) + p/2.0 *(x[i+1]-x[i])*(x[i+1]-x[i]);
+            sum += y[i]*(x[i+1]-x[i]) + p/2.0 *(x[i+1]-x[i])*(x[i+1]-x[i]);
         }
         //eq (1) in notes
         double p_z = (y[z_bis +1]-y[z_bis])/(x[z_bis+1]-x[z_bis]);
-        int_s += y[z_bis]*(z-x[z_bis]) + p_z*((z-x[z_bis])*(z-x[z_bis]))/2;
-        return int_s;
+        sum += y[z_bis]*(z-x[z_bis]) + p_z*((z-x[z_bis])*(z-x[z_bis]))/2;
+        return sum;
     }
 }
