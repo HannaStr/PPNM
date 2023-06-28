@@ -71,6 +71,7 @@ public class main{
 
     public static void erf_data(){
         WriteLine();
+        WriteLine("The error function was plotted in erf.svg. \nThe function seems to be a good fit with the exact results especially when the values of delta and epsilon are small. \nHowever, for delta and epsilon larger (e.g. 0.01) the function is no longer smooth at z = +/- 1. This is due to the nature of the error function in use \n(which is defined differently for intervals of (z<0), (0<=z<=1) and (1<z)). \n");
         for(double i=-3.5; i<=3.5; i=i+1.0/32.0){
             double erf_i = rai.erf(i);
             WriteLine($"{i} {erf_i}");

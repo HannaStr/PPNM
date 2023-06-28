@@ -32,6 +32,11 @@ In this case this is:
 True
 
 
+The error function was plotted in erf.svg. 
+The function seems to be a good fit with the exact results especially when the values of delta and epsilon are small. 
+However, for delta and epsilon larger (e.g. 0.01) the function is no longer smooth at z = +/- 1. This is due to the nature of the error function in use 
+(which is defined differently for intervals of (z<0), (0<=z<=1) and (1<z)). 
+
 -3.5 -0.999999338329936
 -3.46875 -0.999999165859643
 -3.4375 -0.999998950460199
