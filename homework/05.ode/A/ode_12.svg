@@ -11,7 +11,7 @@
 
 <g id="gnuplot_canvas">
 
-<rect x="0" y="0" width="600" height="480" fill="none"/>
+<rect x="0" y="0" width="600" height="480" fill="#ffffff"/>
 <defs>
 
 	<circle id='gpDot' r='0.5' stroke-width='0.5' stroke='currentColor'/>
@@ -31,7 +31,7 @@
 	<path id='gpPt13' stroke-width='0.222' stroke='currentColor' d='M0,1.330 L1.265,0.411 L0.782,-1.067 L-0.782,-1.076 L-1.265,0.411 z'/>
 	<use xlink:href='#gpPt13' id='gpPt14' fill='currentColor' stroke='none'/>
 	<filter id='textbox' filterUnits='objectBoundingBox' x='0' y='0' height='1' width='1'>
-	  <feFlood flood-color='white' flood-opacity='1' result='bgnd'/>
+	  <feFlood flood-color='#FFFFFF' flood-opacity='1' result='bgnd'/>
 	  <feComposite in='SourceGraphic' in2='bgnd' operator='atop'/>
 	</filter>
 	<filter id='greybox' filterUnits='objectBoundingBox' x='0' y='0' height='1' width='1'>
@@ -39,7 +39,7 @@
 	  <feComposite in='SourceGraphic' in2='grey' operator='atop'/>
 	</filter>
 </defs>
-<g fill="none" color="white" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
+<g fill="none" color="#FFFFFF" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<path stroke='black'  d='M81.53,413.40 L72.53,413.40 M565.82,413.40 L574.82,413.40  '/>	<g transform="translate(64.14,417.30)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
@@ -148,12 +148,12 @@
 </g>
 	<g id="gnuplot_plot_1" ><title>cos(x)</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(498.09,381.30)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
+	<g transform="translate(498.09,75.91)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >cos(x)</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='rgb(148,   0, 211)'  d='M506.48,377.40 L549.04,377.40 M86.37,54.91 L91.22,57.59 L96.06,62.04 L100.90,68.20 L105.74,76.01 L110.59,85.41
+	<path stroke='rgb(148,   0, 211)'  d='M506.48,72.01 L549.04,72.01 M86.37,54.91 L91.22,57.59 L96.06,62.04 L100.90,68.20 L105.74,76.01 L110.59,85.41
 		L115.43,96.28 L120.27,108.53 L125.12,122.03 L129.96,136.64 L134.80,152.22 L139.64,168.62 L144.49,185.67 L149.33,203.20
 		L154.17,221.04 L159.02,239.00 L163.86,256.91 L168.70,274.58 L173.55,291.85 L178.39,308.54 L183.23,324.48 L188.07,339.51
 		L192.92,353.48 L197.76,366.26 L202.60,377.71 L207.45,387.73 L212.29,396.20 L217.13,403.05 L221.97,408.20 L226.82,411.62
@@ -169,12 +169,12 @@
 	</g>
 	<g id="gnuplot_plot_2" ><title>-sin(x)</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(498.09,399.30)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
+	<g transform="translate(498.09,93.91)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >-sin(x)</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='rgb(  0, 158, 115)'  d='M506.48,395.40 L549.04,395.40 M86.37,251.65 L91.22,269.41 L96.06,286.82 L100.90,303.69 L105.74,319.87 L110.59,335.18
+	<path stroke='rgb(  0, 158, 115)'  d='M506.48,90.01 L549.04,90.01 M86.37,251.65 L91.22,269.41 L96.06,286.82 L100.90,303.69 L105.74,319.87 L110.59,335.18
 		L115.43,349.48 L120.27,362.63 L125.12,374.48 L129.96,384.93 L134.80,393.87 L139.64,401.20 L144.49,406.86 L149.33,410.79
 		L154.17,412.95 L159.02,413.32 L163.86,411.90 L168.70,408.69 L173.55,403.73 L178.39,397.08 L183.23,388.79 L188.07,378.95
 		L192.92,367.66 L197.76,355.03 L202.60,341.19 L207.45,326.27 L212.29,310.43 L217.13,293.82 L221.97,276.61 L226.82,258.97
@@ -188,7 +188,7 @@
 		L502.86,352.65 L507.71,338.60 L512.55,323.51 L517.39,307.52 L522.23,290.79 L527.08,273.49 L531.92,255.79 L536.76,237.88
 		L541.61,219.92 L546.45,202.10 L551.29,184.59 L556.13,167.57 L560.98,151.22 L565.82,135.69  '/></g>
 	</g>
-<g fill="none" color="white" stroke="rgb(  0, 158, 115)" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
+<g fill="none" color="#FFFFFF" stroke="rgb(  0, 158, 115)" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
@@ -198,7 +198,7 @@
 	<path stroke='black'  d='M81.53,54.01 L81.53,413.40 L565.82,413.40 L565.82,54.01 L81.53,54.01 Z  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(323.67,30.91)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="middle">
-		<text><tspan font-family="Arial" >Solution of the ODE u''=-u with the initial conditions y</tspan><tspan font-family="Arial"  font-size="9.6" dy="3.60px">0</tspan><tspan font-family="Arial"  font-size="12.0" dy="-3.60px">=(1,0)</tspan></text>
+		<text><tspan font-family="Arial" >Solution of the ODE for (u''=-u) using Runge-Kutta stepper 12</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">

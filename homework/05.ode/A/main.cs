@@ -43,6 +43,31 @@ public class main{
                 y0_osc = sol;
             }
 
+    }
+
+    public static void pendulun_scipy(){
+        WriteLine();
+        WriteLine();
+
+        double h = 0.1;
+        //assume constants
+        double b = 0.25;
+        double c = 5.0;
+        Func<double, vector, vector> osc = delegate(double t, vector y){
+            //theta, omega = y
+            double theta = y[0];
+            double omega = y[1];
+            //dydt = [omega, -b*omega - c*np.sin(theta)]
+            return new vector (omega, -b*omega - c*Sin(theta));
+        };
+
+        double[] initial_cond = new double [] {PI - 0.1, 0.0};
+        vector y0_osc = new vector(initial_cond);
+            for(double t = 0; t <= 10.0; t += h){
+                vector sol = ode.driver23(osc, t-h, y0_osc, t);
+                WriteLine($"{t} {sol[0]} {sol[1]}");
+                y0_osc = sol;
+            }
 
     }
 }
